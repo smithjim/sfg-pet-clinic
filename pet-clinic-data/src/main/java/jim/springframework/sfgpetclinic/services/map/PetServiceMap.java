@@ -2,10 +2,11 @@ package jim.springframework.sfgpetclinic.services.map;
 
 import jim.springframework.sfgpetclinic.model.Pet;
 import jim.springframework.sfgpetclinic.services.CrudService;
+import jim.springframework.sfgpetclinic.services.PetService;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public void delete(Pet object) {
         super.delete(object);
