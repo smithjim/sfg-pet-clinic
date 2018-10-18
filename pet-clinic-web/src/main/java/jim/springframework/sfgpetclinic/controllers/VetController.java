@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping(VetController.BASE_URL)
+@RequestMapping({VetController.BASE_URL, VetController.BASE_URL + ".html"})
 @Controller
 public class VetController {
 
