@@ -37,8 +37,8 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        boolean loaded = petTypeService.findAll().isEmpty();
-        if (! loaded) {
+        boolean empty = petTypeService.findAll().isEmpty();
+        if (empty) {
             loadData();
         }
 

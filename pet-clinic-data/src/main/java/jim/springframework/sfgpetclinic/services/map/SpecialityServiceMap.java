@@ -1,12 +1,15 @@
 package jim.springframework.sfgpetclinic.services.map;
 
+import jim.springframework.sfgpetclinic.constants.SpringProfiles;
 import jim.springframework.sfgpetclinic.model.Speciality;
 import jim.springframework.sfgpetclinic.services.SpecialityService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({SpringProfiles.DEFAULT, SpringProfiles.MAP})
 public class SpecialityServiceMap extends AbstractMapService<Speciality, Long> implements SpecialityService {
     @Override
     public void delete(Speciality object) {
