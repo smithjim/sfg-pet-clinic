@@ -1,4 +1,4 @@
-package jim.springframework.sfgpetclinic.services.jpa;
+package jim.springframework.sfgpetclinic.services.springdatajpa;
 
 import jim.springframework.sfgpetclinic.model.Owner;
 import jim.springframework.sfgpetclinic.repositories.OwnerRepository;
@@ -6,17 +6,16 @@ import jim.springframework.sfgpetclinic.services.OwnerService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
 import java.util.Set;
 import java.util.TreeSet;
 
 @Service
 @Profile("springdatajpa")
-public class OwnerJpaService implements OwnerService {
+public class OwnerSDJpaService implements OwnerService {
 
     private final OwnerRepository ownerRepository;
 
-    public OwnerJpaService(OwnerRepository ownerRepository) {
+    public OwnerSDJpaService(OwnerRepository ownerRepository) {
         this.ownerRepository = ownerRepository;
     }
 
