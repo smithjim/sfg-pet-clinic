@@ -50,7 +50,10 @@ public class DataLoader implements CommandLineRunner {
         petTypeService.save(dog);
         petTypeService.save(cat);
 
-        Owner owner1 = createOwner("owner", "one", "address1", "city1", "111-111");
+
+        Owner owner1 = Owner.builder().address("address1").firstName("owner")
+                .lastName("one").city("city1").telephone("111-111").build();
+        
         Pet pet1 = createPet("Russel", owner1, dog, LocalDate.of(1990, 1, 1));
         owner1.setPets(new HashSet<>(Arrays.asList(pet1)));
 

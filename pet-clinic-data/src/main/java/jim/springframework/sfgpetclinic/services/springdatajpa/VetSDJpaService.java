@@ -7,8 +7,8 @@ import jim.springframework.sfgpetclinic.services.VetService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
 @Service
 @Profile(SpringProfiles.SPRING_DATA_JPA)
 public class VetSDJpaService implements VetService {
@@ -31,7 +31,7 @@ public class VetSDJpaService implements VetService {
 
     @Override
     public Set<Vet> findAll() {
-        Set<Vet> vets = new TreeSet<>();
+        Set<Vet> vets = new HashSet<>();
         vetRepository.findAll().iterator().forEachRemaining(vets::add);
         return vets;
     }
