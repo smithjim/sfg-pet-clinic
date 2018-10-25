@@ -72,17 +72,18 @@ class OwnerServiceMapTest {
 
     @Test
     void saveWithPets() {
+        Pet returnPet = Pet.builder().id(1L).build();
         Set<Pet> pets = new HashSet<>();
         pets.add(Pet.builder().build());
 
         Owner o = ownerServiceMap.findById(ownerId);
         o.setPets(pets);
 
-        when(petServiceMock.save(any(Pet.class))).thenReturn(Pet.builder().id(1L).build());
+        when(petServiceMock.save(any(Pet.class))).thenReturn(returnPet);
 
         ownerServiceMap.save(o);
 
-        verify(petServiceMock, times(1)).save(any(Pet.class));
+        verify(petServiceMock, times(1)).save(any());
     }
 
     @Test
